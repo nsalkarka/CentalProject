@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Cental.BusinessLayer.Concrete
 {
+    //İlk yaptığımızda diğer concrete metotlar bundan miras alıyordu şu an bir işlevi yok 18. bölümde 1. saatte değiştirdik
+
     public class GenericManager<T> : IGenericService<T> where T : class
     {
         private readonly IGenericDal<T> _genericDal;
