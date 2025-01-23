@@ -27,6 +27,12 @@ namespace Cental.WebUI.Controllers
         [HttpPost]
         public IActionResult CreateBrand(Brand model) 
         {
+
+            if (!ModelState.IsValid) 
+            {
+                return View(model);
+            
+            }
             _brandService.TCreate(model);
             return RedirectToAction("Index");
         }

@@ -23,10 +23,10 @@
         <tr>
             <td>@count</td>
             <td>@item.BrandName</td>
-            <td><a asp-action="DeleteBrand" asp-route-id="@item.BrandId" class="btn btn-danger">Sil</a> </td>
-            <td><a asp-action="UpdateBrand" asp-route-id="@item.BrandId" class="btn btn-info">Güncelle</a> </td>
+            <td><a asp-action="DeleteBrand" asp-route-id="@item.BrandId" class="btn btn-danger"><i class="fa fa-trash"></i></a> </td>
+            <td><a asp-action="UpdateBrand" asp-route-id="@item.BrandId" class="btn btn-info"><i class="fa fa-pen"></i></a> </td>
         </tr>
     }
 </table>
 
-<a asp-action="CreateBrand" asp-controller="AdminBrand" class="btn btn-primary">Yeni Marka Ekle</a>
+<a asp-action="CreateBrand" asp-controller="AdminBrand" class="btn btn-primary"><i class="fa fa-plus-circle"></i></a>
