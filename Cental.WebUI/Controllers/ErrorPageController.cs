@@ -4,9 +4,15 @@ using Microsoft.AspNetCore.Mvc;
 namespace Cental.WebUI.Controllers
 {
     [AllowAnonymous]
-    public class DefaultController : Controller
+    public class ErrorPageController : Controller
     {
-        public IActionResult Index()
+      
+        public IActionResult NotFound404()
+        {
+            return View();
+        }
+
+        public IActionResult AccessDenied()
         {
             return View();
         }
