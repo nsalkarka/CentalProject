@@ -28,6 +28,9 @@ namespace Cental.BusinessLayer.Extensions
             services.AddScoped<ICarService, CarManager>();
 
             services.AddScoped<IImageSurvice, ImageService>();
+
+            services.AddScoped<IUserSocialService, UserSocialManager>();
+            services.AddScoped<IUserSocialDal, EfUserSocialDal>();
         }   
     }
 }

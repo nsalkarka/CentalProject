@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Cental.DtoLayer.RoleDtos;
 using Cental.DtoLayer.UserDtos;
 using Cental.EntityLayer.Entities;
 
@@ -9,6 +10,7 @@ namespace Cental.WebUI.Mappings
         public UserMapping() 
         {
         CreateMap<AppUser,UserRegisterDto>().ReverseMap();
+        CreateMap<AppUser,ResultUserDto>().ReverseMap();
         }
     }
 }
