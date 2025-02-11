@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Cental.DtoLayer.RoleDtos;
 using Cental.DtoLayer.UserDtos;
 using Cental.EntityLayer.Entities;
 

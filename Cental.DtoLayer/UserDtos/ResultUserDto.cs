@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Cental.DtoLayer.UserSocialDtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cental.DtoLayer.RoleDtos
+namespace Cental.DtoLayer.UserDtos
 {
     public class ResultUserDto
     {
@@ -14,9 +15,11 @@ namespace Cental.DtoLayer.RoleDtos
         public string InageUrl { get; set; }
 
 
-        public string FullName => string.Join(" ", FirstName,LastName);
+        public string FullName => string.Join(" ", FirstName, LastName);
         public string UserName { get; set; }
         public string Email { get; set; }
-        public IList<string> Roles { get; set; }    
+        public IList<string> Roles { get; set; }
+
+        public List<ResultSocialDto> UserSocials { get; set; }
     }
 }
