@@ -38,5 +38,31 @@ namespace Cental.WebUI.Controllers
             _bannerService.TCreate(banner);
             return RedirectToAction("Index");
         }
+
+        public ActionResult DeleteBanner(int id)
+        {
+            _bannerService.TDelete(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateBanner(int id)
+        {
+            var value=_bannerService.TGetById(id);
+            var banner =_mapper.Map<UpdateBannerDto>(value);
+            return View(banner);
+        }
+    
+
+        [HttpPost]
+        public IActionResult UpdateBanner(UpdateBannerDto model)
+        { 
+            // UpdateBannerDto'yu Banner entity'sine dönüştür
+            var bannerEntity = _mapper.Map<Banner>(model);
+
+            // Banner entity'sini güncelle
+            _bannerService.TUpdate(bannerEntity);
+            return RedirectToAction("Index");
+        }
     }
 }
