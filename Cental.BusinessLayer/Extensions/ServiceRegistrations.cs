@@ -23,7 +23,13 @@ namespace Cental.BusinessLayer.Extensions
             
             services.AddScoped<IBrandDal, EfBrandDal>();
             services.AddScoped<IBrandService, BrandManager>();
-            
+
+            services.AddScoped<IFeatureDal, EfFeatureDal>();
+            services.AddScoped<IFeatureService, FeatureManager>();
+
+            services.AddScoped<IServiceDal, EfServiceDal>();
+            services.AddScoped<IServiceService, ServiceManager>();
+
             services.AddScoped<ICarDal, EfCarDal>();
             services.AddScoped<ICarService, CarManager>();
 
