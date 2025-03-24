@@ -22,5 +22,10 @@ namespace Cental.DataAccessLayer.Concrete
             //bu Eager Loading     vs.//Lazy Loading
             return _context.Cars.Include(x=>x.Brand).ToList();
         }
+
+        public int GetCarCount() // Yeni metot implementasyonu
+        {
+            return _context.Cars.Count();
+        }
     }
 }

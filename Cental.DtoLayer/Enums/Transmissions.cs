@@ -8,6 +8,7 @@ namespace Cental.DtoLayer.Enums
 {
     public enum Transmissions
     {
+        AT,
         Beş_İleri,
         Altı_İleri,
         Yedi_İleri,

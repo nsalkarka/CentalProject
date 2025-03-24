@@ -11,6 +11,11 @@ namespace Cental.BusinessLayer.Concrete
 {
     public class CarManager(ICarDal _carDal) : ICarService
     {
+        public int GetCarCount()
+        {
+            return _carDal.GetCarCount();
+        }
+
         public void TCreate(Car entity)
         {
             _carDal.Create(entity);

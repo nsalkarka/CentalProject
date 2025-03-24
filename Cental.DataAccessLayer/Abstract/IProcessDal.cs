@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cental.BusinessLayer.Abstract
+namespace Cental.DataAccessLayer.Abstract
 {
-    public interface ICarService:IGenericService<Car>
+    public interface IProcessDal:IGenericDal<Process>
     {
-        public List<Car> TGetCarsWithBrands();
-        int GetCarCount();
+
     }
 }

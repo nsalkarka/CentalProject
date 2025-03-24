@@ -30,6 +30,9 @@ namespace Cental.BusinessLayer.Extensions
             services.AddScoped<IServiceDal, EfServiceDal>();
             services.AddScoped<IServiceService, ServiceManager>();
 
+            services.AddScoped<IProcessDal, EfProcessDal>();
+            services.AddScoped<IProcessService, ProcessManager>();
+
             services.AddScoped<ICarDal, EfCarDal>();
             services.AddScoped<ICarService, CarManager>();
 

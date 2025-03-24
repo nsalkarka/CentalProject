@@ -48,5 +48,31 @@ namespace Cental.WebUI.Controllers
             return RedirectToAction("Index");   
         
         }
+
+        public IActionResult DeleteCar(int id)
+        {
+            _carService.TDelete(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public IActionResult UpdateCar(int id)
+        {
+            GetValuesinDropDown();
+            var value=_carService.TGetById(id);
+           var car= _mapper.Map<UpdateCarDto>(value);
+            return View(car);
+
+        }
+
+        [HttpPost]
+        public IActionResult UpdateCar(UpdateCarDto updateCarDto)
+        {
+            GetValuesinDropDown();
+            var cars= _mapper.Map<Car>(updateCarDto);
+            _carService.TUpdate(cars);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

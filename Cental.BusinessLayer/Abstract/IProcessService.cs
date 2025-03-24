@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cental.BusinessLayer.Abstract
 {
-    public interface ICarService:IGenericService<Car>
+    public interface IProcessService:IGenericService<Process>
     {
-        public List<Car> TGetCarsWithBrands();
-        int GetCarCount();
     }
 }
