@@ -29,6 +29,11 @@ namespace Cental.DataAccessLayer.Context
         public DbSet<Service> Services { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<UserSocial> UserSocials { get; set; }
+        public DbSet<SiteSettings> SiteSettings{ get; set; }
+        public DbSet<SiteSettingsAdress> SiteSettingsAdresses{ get; set; }
+        public DbSet<SiteSettingsQuickLink> SiteSettingsQuickLinks{ get; set; }
+        public DbSet<SiteSettingsSocialMedia> SiteSettingsSocialMedias{ get; set; }
+        public DbSet<SiteSettingsTopMenu> SiteSettingsTopMenus{ get; set; }
 
     }
 }

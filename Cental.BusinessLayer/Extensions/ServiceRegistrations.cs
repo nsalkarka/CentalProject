@@ -40,6 +40,21 @@ namespace Cental.BusinessLayer.Extensions
 
             services.AddScoped<IUserSocialService, UserSocialManager>();
             services.AddScoped<IUserSocialDal, EfUserSocialDal>();
+
+            services.AddScoped<ISiteSettingsService, SiteSettingsManager>();
+            services.AddScoped<ISiteSettingsDal, EfSiteSettingsDal>();
+
+            services.AddScoped<ISiteSettingsAdressService, SiteSettingsAdressManager>();
+            services.AddScoped<ISiteSettingsAdressDal, EfSiteSettingsAdressDal>();
+
+            services.AddScoped<ISiteSettingsQuickLinkService, SiteSettingsQuickLinkManager>();
+            services.AddScoped<ISiteSettingsQuickLinkDal, EfSiteSettingsQuickLinkDal>();
+
+            services.AddScoped<ISiteSettingsSocialMediaService, SiteSettingsSocialMediaManager>();
+            services.AddScoped<ISiteSettingsSocialMediaDal, EfSiteSettingsSocialMediaDal>();
+
+            services.AddScoped<ISiteSettingsTopMenuService, SiteSettingsTopMenuManager>();
+            services.AddScoped<ISiteSettingsTopMenuDal, EfSiteSettingsTopMenuDal>();
         }   
     }
 }

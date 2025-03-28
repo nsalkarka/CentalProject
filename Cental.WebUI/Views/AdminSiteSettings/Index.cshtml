@@ -1,0 +1,115 @@
+﻿@model List<ResultSiteSettingsDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th colspan="10">Genel Ayarlar</th>
+        </tr>
+        <tr>
+            <th>#</th>
+            <th>Site Adı</th>
+            <th>Site Linki</th>
+            <th>Mail</th>
+            <th>Telefon Numarası</th>
+            <th>Fax No</th>
+            <th>Haftaiçi Saatler</th>
+            <th>Haftasonu Saatler</th>
+            <th>Tatil Günleri</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.SiteName</td>
+                <td>@item.SiteLink</td>
+                <td>@item.Mail</td>
+                <td>@item.Phone</td>
+                <td>@item.Fax</td>
+                <td>@item.MidweekHours</td>
+                <td>@item.WeekendHours</td>
+                <td>@item.Vacationours</td>
+                <td><a asp-action="UpdateSettings" asp-route-id="@item.SiteSettingsId" class="btn btn-info">Ayarları Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="10">
+                <a asp-action="CreateSettings" asp-controller="AdminSiteSettings" class="btn btn-primary">Yeni Ayar Ekle</a>
+            </td>
+        </tr>
+    </tfoot>
+
+    <thead>
+        <tr>
+            <th colspan="10">Adres Bilgileri</th>
+        </tr>
+        <tr>
+            <th colspan="9">Adres Başlığı</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td colspan="9">
+                    @foreach (var adr in item.Address)
+                    {
+                        @adr.Title <br />
+                    }
+                </td>
+                <td><a asp-action="UpdateSettings" asp-route-id="@item.SiteSettingsId" class="btn btn-info">Ayarları Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="10">
+                <a asp-action="CreateSettings" asp-controller="AdminSiteSettings" class="btn btn-primary">Yeni Ayar Ekle</a>
+            </td>
+        </tr>
+    </tfoot>
+
+    <thead>
+        <tr>
+            <th colspan="10">Sosyal Medya Bilgileri</th>
+        </tr>
+        <tr>
+            <th colspan="9">Sosyal Medya Linki</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td colspan="9">
+                    @foreach (var social in item.SocialMedia)
+                    {
+                        @social.Url <br />
+                    }
+                </td>
+                <td><a asp-action="UpdateSettings" asp-route-id="@item.SiteSettingsId" class="btn btn-info">Ayarları Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="10">
+                <a asp-action="CreateSettings" asp-controller="AdminSiteSettings" class="btn btn-primary">Yeni Ayar Ekle</a>
+            </td>
+        </tr>
+    </tfoot>
+</table>
