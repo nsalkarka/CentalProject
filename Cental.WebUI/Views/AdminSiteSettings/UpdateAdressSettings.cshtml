@@ -1,0 +1,24 @@
+﻿@model UpdateSiteSettingsAdressDto
+@{
+    ViewData["Title"] = "UpdateAdressSettings";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h1>UpdateAdressSettings</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="SiteSettingsAdressId" />
+    <label>Adres Başlığı</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Adres Bilgileri</label>
+    <input type="text" asp-for="Adress" class="form-control" />
+    <br />
+    <label>Harita Konumu</label>
+    <input type="text" asp-for="MapLocation" class="form-control" />
+    <br />
+
+
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>

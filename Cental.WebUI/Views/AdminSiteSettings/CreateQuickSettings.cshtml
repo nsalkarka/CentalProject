@@ -1,0 +1,23 @@
+﻿@model CreateSiteSettingsQuickLinkDto
+@{
+    ViewData["Title"] = "CreateQuickSettings";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+<form method="post" asp-action="CreateQuickSettings">
+
+    <label>Hızlı Link Adı</label>
+    <input type="text" asp-for="LinkTitle" class="form-control" />
+    <br />
+    <label>Hızlı Link Url</label>
+    <input type="text" asp-for="LinkAdress" class="form-control" />
+    <br />
+   
+
+
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>
+
+

@@ -13,6 +13,6 @@ namespace Cental.EntityLayer.Entities
         public string Url { get; set; }
         public string Icon { get; set; }
 
-        public virtual SiteSettings siteSettings { get; set; }
+      
     }
 }

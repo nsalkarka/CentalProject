@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Cental.BusinessLayer.Abstract;
+using Cental.DtoLayer.SiteSettingsSocialMediaDtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cental.WebUI.Controllers
@@ -8,6 +11,7 @@ namespace Cental.WebUI.Controllers
     {
         public IActionResult Index()
         {
+           
             return View();
         }
     }

@@ -12,6 +12,6 @@ namespace Cental.EntityLayer.Entities
         public string MenuTitle { get; set; }
         public string MenuAdress { get; set; }
 
-        public virtual SiteSettings siteSettings { get; set; }
+        
     }
 }

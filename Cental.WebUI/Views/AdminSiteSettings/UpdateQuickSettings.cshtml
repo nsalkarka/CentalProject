@@ -1,0 +1,23 @@
+﻿@model UpdateSiteSettingsQuickLinkDto
+@{
+    ViewData["Title"] = "UpdateQuickSettings";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h1>UpdateQuickSettings</h1>
+
+<form method="post" asp-action="UpdateQuickSettings">
+
+    <input type="hidden" asp-for="SiteSettingsQuickLinkId" />
+    <label>Hızlı Link Adı</label>
+    <input type="text" asp-for="LinkTitle" class="form-control" />
+    <br />
+    <label>Hızlı Link Url</label>
+    <input type="text" asp-for="LinkAdress" class="form-control" />
+    <br />
+
+
+
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>

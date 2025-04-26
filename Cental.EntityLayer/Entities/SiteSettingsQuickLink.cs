@@ -12,6 +12,6 @@ namespace Cental.EntityLayer.Entities
         public string LinkTitle { get; set; }
         public string LinkAdress { get; set; }
 
-        public virtual SiteSettings siteSettings { get; set; }
+        
     }
 }

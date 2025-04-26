@@ -34,6 +34,7 @@ namespace Cental.DataAccessLayer.Context
         public DbSet<SiteSettingsQuickLink> SiteSettingsQuickLinks{ get; set; }
         public DbSet<SiteSettingsSocialMedia> SiteSettingsSocialMedias{ get; set; }
         public DbSet<SiteSettingsTopMenu> SiteSettingsTopMenus{ get; set; }
+        public DbSet<MailingList> MailingLists{ get; set; }
 
     }
 }

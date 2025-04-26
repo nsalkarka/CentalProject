@@ -1,0 +1,24 @@
+﻿@model CreateSiteSettingsSocialMediaDto
+@{
+    ViewData["Title"] = "CreateSocialSettings";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+
+<form method="post" asp-action="CreateSocialSettings">
+
+    <label>Sosyal Medya Platformu</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>İkon</label>
+    <input type="text" asp-for="Icon" class="form-control" />
+    <br />
+    <label>Url</label>
+    <input type="text" asp-for="Url" class="form-control" />
+    <br />
+
+
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>

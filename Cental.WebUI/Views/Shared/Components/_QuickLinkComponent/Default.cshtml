@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<ResultSiteSettingsQuickLinkDto>
+
+<div class="col-md-6 col-lg-6 col-xl-3">
+    <div class="footer-item d-flex flex-column">
+        <h4 class="text-white mb-4">Quick Links</h4>
+        @foreach (var item in Model)
+        {
+            <a href="@item.LinkAdress"><i class="fas fa-angle-right me-2"></i>@item.LinkTitle</a>
+        }
+
+    </div>
+</div>

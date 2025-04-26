@@ -1,0 +1,41 @@
+﻿@model UpdateSiteSettingsDto
+@{
+    ViewData["Title"] = "UpdateSettings";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h1>UpdateSettings</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="SiteSettingsId" />
+    <label>Site Adı</label>
+    <input type="text" asp-for="SiteName" class="form-control" />
+    <br />
+    <label>Site Linki</label>
+    <input type="text" asp-for="SiteLink" class="form-control" />
+    <br />
+    <label>Sitenin Logosu</label>
+    <input type="text" asp-for="SiteLogo" class="form-control" />
+    <br />
+    <label>Telefon</label>
+    <input type="text" asp-for="Phone" class="form-control" />
+    <br />
+    <label>Mail</label>
+    <input type="text" asp-for="Mail" class="form-control" />
+    <br />
+    <label>Fax</label>
+    <input type="text" asp-for="Fax" class="form-control" />
+    <br />
+    <label>Haftaiçi Saatler</label>
+    <input type="text" asp-for="MidweekHours" class="form-control" />
+    <br />
+    <label>Haftasonu Saatler</label>
+    <input type="text" asp-for="WeekendHours" class="form-control" />
+    <br />
+    <label>Tatil Günleri</label>
+    <input type="text" asp-for="Vacationours" class="form-control" />
+    <br />
+
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>

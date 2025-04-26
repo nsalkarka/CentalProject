@@ -13,6 +13,6 @@ namespace Cental.EntityLayer.Entities
         public string Adress { get; set; }
         public string MapLocation { get; set; }
 
-        public virtual SiteSettings siteSettings { get; set; }
+        
     }
 }

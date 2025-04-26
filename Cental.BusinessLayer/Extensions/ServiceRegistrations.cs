@@ -55,6 +55,12 @@ namespace Cental.BusinessLayer.Extensions
 
             services.AddScoped<ISiteSettingsTopMenuService, SiteSettingsTopMenuManager>();
             services.AddScoped<ISiteSettingsTopMenuDal, EfSiteSettingsTopMenuDal>();
+
+            services.AddScoped<ITestimonialService,TestimonialManager>();
+            services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+
+            services.AddScoped<IMailListService, MailListManager>();
+            services.AddScoped<IMailingListDal, EfMailingListDal>();
         }   
     }
 }

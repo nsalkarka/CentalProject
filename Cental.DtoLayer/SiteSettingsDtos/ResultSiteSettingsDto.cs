@@ -20,6 +20,7 @@ namespace Cental.DtoLayer.SiteSettingsDtos
         public string MidweekHours { get; set; }
         public string Vacationours { get; set; }
 
+
         public virtual List<SiteSettingsAdress> Address { get; set; }
         public virtual List<SiteSettingsQuickLink> QuickLink { get; set; }
         public virtual List<SiteSettingsSocialMedia> SocialMedia { get; set; }

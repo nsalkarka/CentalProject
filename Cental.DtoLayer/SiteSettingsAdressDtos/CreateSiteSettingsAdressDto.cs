@@ -12,5 +12,6 @@ namespace Cental.DtoLayer.SiteSettingsAdressDtos
         public string Title { get; set; }
         public string Adress { get; set; }
         public string MapLocation { get; set; }
+
     }
 }

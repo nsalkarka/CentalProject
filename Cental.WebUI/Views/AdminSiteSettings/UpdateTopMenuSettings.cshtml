@@ -1,0 +1,23 @@
+﻿@model UpdateSiteSettingsTopMenuDto
+@{
+    ViewData["Title"] = "UpdateTopMenuSettings";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h1>UpdateTopMenuSettings</h1>
+
+<form method="post" asp-action="UpdateTopMenuSettings">
+
+    <input type="hidden" asp-for="SiteSettingsTopMenuId" />
+    <label>Menü Adı</label>
+    <input type="text" asp-for="MenuTitle" class="form-control" />
+    <br />
+    <label>Menü Url</label>
+    <input type="text" asp-for="MenuAdress" class="form-control" />
+    <br />
+
+
+
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>

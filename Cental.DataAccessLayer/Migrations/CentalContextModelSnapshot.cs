@@ -316,6 +316,23 @@ namespace Cental.DataAccessLayer.Migrations
                     b.ToTable("Features");
                 });
 
+            modelBuilder.Entity("Cental.EntityLayer.Entities.MailingList", b =>
+                {
+                    b.Property<int>("MailingListId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MailingListId"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MailingListId");
+
+                    b.ToTable("MailingLists");
+                });
+
             modelBuilder.Entity("Cental.EntityLayer.Entities.Process", b =>
                 {
                     b.Property<int>("ProcessId")
@@ -448,16 +465,11 @@ namespace Cental.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SiteSettingsId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SiteSettingsAdressId");
-
-                    b.HasIndex("SiteSettingsId");
 
                     b.ToTable("SiteSettingsAdresses");
                 });
@@ -478,12 +490,7 @@ namespace Cental.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SiteSettingsId")
-                        .HasColumnType("int");
-
                     b.HasKey("SiteSettingsQuickLinkId");
-
-                    b.HasIndex("SiteSettingsId");
 
                     b.ToTable("SiteSettingsQuickLinks");
                 });
@@ -500,9 +507,6 @@ namespace Cental.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SiteSettingsId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -512,8 +516,6 @@ namespace Cental.DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SiteSettingsSocialMediaId");
-
-                    b.HasIndex("SiteSettingsId");
 
                     b.ToTable("SiteSettingsSocialMedias");
                 });
@@ -534,12 +536,7 @@ namespace Cental.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SiteSettingsId")
-                        .HasColumnType("int");
-
                     b.HasKey("SiteSettingsTopMenuId");
-
-                    b.HasIndex("SiteSettingsId");
 
                     b.ToTable("SiteSettingsTopMenus");
                 });
@@ -731,50 +728,6 @@ namespace Cental.DataAccessLayer.Migrations
                     b.Navigation("Car");
                 });
 
-            modelBuilder.Entity("Cental.EntityLayer.Entities.SiteSettingsAdress", b =>
-                {
-                    b.HasOne("Cental.EntityLayer.Entities.SiteSettings", "siteSettings")
-                        .WithMany("Address")
-                        .HasForeignKey("SiteSettingsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("siteSettings");
-                });
-
-            modelBuilder.Entity("Cental.EntityLayer.Entities.SiteSettingsQuickLink", b =>
-                {
-                    b.HasOne("Cental.EntityLayer.Entities.SiteSettings", "siteSettings")
-                        .WithMany("QuickLink")
-                        .HasForeignKey("SiteSettingsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("siteSettings");
-                });
-
-            modelBuilder.Entity("Cental.EntityLayer.Entities.SiteSettingsSocialMedia", b =>
-                {
-                    b.HasOne("Cental.EntityLayer.Entities.SiteSettings", "siteSettings")
-                        .WithMany("SocialMedia")
-                        .HasForeignKey("SiteSettingsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("siteSettings");
-                });
-
-            modelBuilder.Entity("Cental.EntityLayer.Entities.SiteSettingsTopMenu", b =>
-                {
-                    b.HasOne("Cental.EntityLayer.Entities.SiteSettings", "siteSettings")
-                        .WithMany("TopMenu")
-                        .HasForeignKey("SiteSettingsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("siteSettings");
-                });
-
             modelBuilder.Entity("Cental.EntityLayer.Entities.UserSocial", b =>
                 {
                     b.HasOne("Cental.EntityLayer.Entities.AppUser", "User")
@@ -850,17 +803,6 @@ namespace Cental.DataAccessLayer.Migrations
             modelBuilder.Entity("Cental.EntityLayer.Entities.Car", b =>
                 {
                     b.Navigation("Reviews");
-                });
-
-            modelBuilder.Entity("Cental.EntityLayer.Entities.SiteSettings", b =>
-                {
-                    b.Navigation("Address");
-
-                    b.Navigation("QuickLink");
-
-                    b.Navigation("SocialMedia");
-
-                    b.Navigation("TopMenu");
                 });
 #pragma warning restore 612, 618
         }

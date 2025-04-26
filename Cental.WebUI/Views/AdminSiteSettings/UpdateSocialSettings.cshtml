@@ -1,0 +1,25 @@
+﻿@model UpdateSiteSettingsSocialMediaDto
+@{
+    ViewData["Title"] = "UpdateSocialSettings";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+
+
+<form method="post" asp-action="UpdateSocialSettings">
+    <input type="hidden" asp-for="SiteSettingsSocialMediaId" />
+    <label>Sosyal Medya Platformu</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>İkon</label>
+    <input type="text" asp-for="Icon" class="form-control" />
+    <br />
+    <label>Url</label>
+    <input type="text" asp-for="Url" class="form-control" />
+    <br />
+
+
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>

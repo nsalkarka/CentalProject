@@ -1,0 +1,39 @@
+﻿@model List<ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Testimonial Alanı";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+@{
+    int count = 0;
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Resim</th>
+        <th>İsim</th>
+        <th>Ünvan</th>
+        <th>Yorum</th>
+        <th>Yıldız</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td><img src="@item.ImageUrl" style="width:75px;height:75px" /></td>
+            <td>@item.Name</td>
+            <td>@item.Title</td>
+            <td>@item.Comment</td>
+            <td>@item.Review</td>
+            <td><a asp-action="DeleteTestimonial" asp-route-id="@item.TestimonialId" class="btn btn-danger">Sil</a> </td>
+            <td><a asp-action="UpdateTestimonial" asp-route-id="@item.TestimonialId" class="btn btn-info">Güncelle</a> </td>
+        </tr>
+    }
+</table>
+
+<a asp-action="CreateTestimonial" asp-controller="AdminTestimonial" class="btn btn-primary">Yeni Öne Çıkan Ekle</a>
